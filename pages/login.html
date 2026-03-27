@@ -5,12 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LaMaison - Login</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/auth.css">
 </head>
 <body>
 
-    <!-- Login page content goes here -->
+    <div class="auth-page">
+
+        <!-- NAVBAR -->
+        <nav class="auth-navbar">
+            <div class="logo">La<span>Maison</span></div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="cart-icon" onclick="window.location.href='menu.html'">
+                🛒
+                <span class="cart-count" id="cart-count">0</span>
+            </div>
+        </nav>
+
+        <!-- MAIN BODY -->
+        <div class="auth-body">
+
+            <!-- LEFT SIDE -->
+            <div class="auth-left">
+                <div class="auth-badge">Welcome Back</div>
+                <h1>Sign In &amp; Start<br><span>Ordering Today</span></h1>
+                <p>Access your account to track orders, save your favourite dishes, and enjoy exclusive member deals.</p>
+                <div class="auth-features">
+                    <div class="auth-feature-item">
+                        <div class="auth-feature-dot"></div>
+                        <div class="auth-feature-text">Track your orders in real time</div>
+                    </div>
+                    <div class="auth-feature-item">
+                        <div class="auth-feature-dot"></div>
+                        <div class="auth-feature-text">Save your favourite dishes</div>
+                    </div>
+                    <div class="auth-feature-item">
+                        <div class="auth-feature-dot"></div>
+                        <div class="auth-feature-text">Exclusive member discounts</div>
+                    </div>
+                    <div class="auth-feature-item">
+                        <div class="auth-feature-dot"></div>
+                        <div class="auth-feature-text">Fast checkout every time</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE — FORM -->
+            <div class="auth-right">
+
+                <div class="form-logo-wrap">
+                    <div class="form-logo-circle">L</div>
+                    <div class="form-logo-name">La<span>Maison</span></div>
+                </div>
+
+                <div class="form-title">Welcome Back!</div>
+                <div class="form-subtitle">Sign in to your account to continue</div>
+
+                <!-- ERROR MESSAGE -->
+                <div class="error-msg" id="login-error">
+                    ❌ Incorrect email or password. Please try again.
+                </div>
+
+                <!-- SUCCESS MESSAGE -->
+                <div class="success-msg" id="login-success">
+                    ✅ Login successful! Redirecting...
+                </div>
+
+                <!-- EMAIL -->
+                <div class="form-group">
+                    <label for="login-email">Email Address</label>
+                    <input type="email" id="login-email" placeholder="Enter your Email Address" />
+                </div>
+
+                <!-- PASSWORD -->
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter your Password" />
+                </div>
+
+                <!-- REMEMBER + FORGOT -->
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" />
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-link">Forgot Password?</a>
+                </div>
+
+                <!-- SUBMIT BUTTON -->
+                <button class="auth-submit-btn" onclick="handleLogin()">
+                    Sign In to my account
+                </button>
+
+                <!-- DIVIDER -->
+                <div class="auth-divider">
+                    <div class="auth-divider-line"></div>
+                    <div class="auth-divider-text">or continue with</div>
+                    <div class="auth-divider-line"></div>
+                </div>
+
+                <!-- SOCIAL BUTTONS -->
+                <div class="social-buttons">
+                    <button class="social-btn">
+                        <span class="social-icon">G</span> Google
+                    </button>
+                    <button class="social-btn">
+                        <span class="social-icon">f</span> Facebook
+                    </button>
+                </div>
+
+                <!-- SWITCH TO SIGNUP -->
+                <div class="auth-switch">
+                    Don't have an account? <a href="signup.html">Create one free</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="auth-footer">
+            <p>© 2026 LaMaison Restaurant. All rights reserved.</p>
+            <div class="auth-footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/cart.js"></script>
 
 </body>
 </html>

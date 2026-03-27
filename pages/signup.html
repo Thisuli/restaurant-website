@@ -5,12 +5,170 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LaMaison - Sign Up</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/auth.css">
 </head>
 <body>
 
-    <!-- Sign up page content goes here -->
+    <div class="auth-page">
+
+        <!-- NAVBAR -->
+        <nav class="auth-navbar">
+            <div class="logo">La<span>Maison</span></div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="cart-icon" onclick="window.location.href='menu.html'">
+                🛒
+                <span class="cart-count" id="cart-count">0</span>
+            </div>
+        </nav>
+
+        <!-- MAIN BODY -->
+        <div class="auth-body">
+
+            <!-- LEFT SIDE -->
+            <div class="auth-left">
+                <div class="auth-badge">Join LaMaison — It's Free!</div>
+                <h1>Create Your Account<br>&amp; <span>Enjoy the Best</span></h1>
+                <p>Join thousands of food lovers who trust LaMaison for the finest dining experience delivered to their door.</p>
+                <div class="auth-perks">
+                    <div class="perk-card">
+                        <div class="perk-icon">🎁</div>
+                        <div class="perk-title">Welcome Offer</div>
+                        <div class="perk-desc">20% off your first order when you sign up today</div>
+                    </div>
+                    <div class="perk-card">
+                        <div class="perk-icon">🚀</div>
+                        <div class="perk-title">Fast Delivery</div>
+                        <div class="perk-desc">Get hot food at your door in under 30 minutes</div>
+                    </div>
+                    <div class="perk-card">
+                        <div class="perk-icon">⭐</div>
+                        <div class="perk-title">Loyalty Points</div>
+                        <div class="perk-desc">Earn points on every order and redeem rewards</div>
+                    </div>
+                    <div class="perk-card">
+                        <div class="perk-icon">💳</div>
+                        <div class="perk-title">Easy Payment</div>
+                        <div class="perk-desc">Multiple secure payment options available</div>
+                    </div>
+                </div>
+                <div class="auth-switch" style="text-align:left;">
+                    Already have an account? <a href="login.html">Sign in here →</a>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE — FORM -->
+            <div class="auth-right">
+
+                <div class="form-logo-wrap">
+                    <div class="form-logo-circle">L</div>
+                    <div class="form-logo-name">La<span>Maison</span></div>
+                </div>
+
+                <div class="form-title">Create Account</div>
+                <div class="form-subtitle">Fill in the details below to get started</div>
+
+                <!-- ERROR MESSAGE -->
+                <div class="error-msg" id="signup-error"></div>
+
+                <!-- SUCCESS MESSAGE -->
+                <div class="success-msg" id="signup-success">
+                    ✅ Account created successfully! Redirecting to login...
+                </div>
+
+                <!-- FIRST NAME + LAST NAME -->
+                <div class="name-row">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" placeholder="First name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" placeholder="Last name" />
+                    </div>
+                </div>
+
+                <!-- EMAIL -->
+                <div class="form-group">
+                    <label for="signup-email">Email Address</label>
+                    <input type="email" id="signup-email" placeholder="Enter your email address" />
+                </div>
+
+                <!-- PHONE -->
+                <div class="form-group">
+                    <label for="signup-phone">Phone Number</label>
+                    <input type="tel" id="signup-phone" placeholder="Enter your phone number" />
+                </div>
+
+                <!-- PASSWORD -->
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" placeholder="Create a strong password" />
+                </div>
+
+                <!-- CONFIRM PASSWORD -->
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" placeholder="Re-enter your password" />
+                </div>
+
+                <!-- TERMS -->
+                <div class="terms-row">
+                    <input type="checkbox" id="terms" />
+                    <label for="terms">
+                        I agree to the <a href="#">Terms and Service</a> and <a href="#">Privacy Policy</a> of LaMaison Restaurant
+                    </label>
+                </div>
+
+                <!-- SUBMIT BUTTON -->
+                <button class="auth-submit-btn" onclick="handleSignup()">
+                    Create my free account
+                </button>
+
+                <!-- DIVIDER -->
+                <div class="auth-divider">
+                    <div class="auth-divider-line"></div>
+                    <div class="auth-divider-text">or sign up with</div>
+                    <div class="auth-divider-line"></div>
+                </div>
+
+                <!-- SOCIAL BUTTONS -->
+                <div class="social-buttons">
+                    <button class="social-btn">
+                        <span class="social-icon">G</span> Google
+                    </button>
+                    <button class="social-btn">
+                        <span class="social-icon">f</span> Facebook
+                    </button>
+                </div>
+
+                <!-- SWITCH TO LOGIN -->
+                <div class="auth-switch">
+                    Already have an account? <a href="login.html">Sign In free</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="auth-footer">
+            <p>© 2026 LaMaison Restaurant. All rights reserved.</p>
+            <div class="auth-footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/cart.js"></script>
 
 </body>
 </html>
