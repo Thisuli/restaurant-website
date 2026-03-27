@@ -7,10 +7,282 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/about.css">
 </head>
 <body>
 
-    <!-- About page content goes here -->
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">La<span>Maison</span></div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="cart-icon" onclick="window.location.href='menu.html'">
+                🛒 <span class="cart-count" id="cart-count">0</span>
+            </div>
+            <button class="btn-gold" onclick="window.location.href='menu.html'">Order Now</button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="about-hero">
+        <div class="pill-orange">Our Story</div>
+        <h1>The Heart Behind<br><span>LaMaison</span></h1>
+        <p>From a small family kitchen to one of the city's most beloved restaurants — our journey has always been about passion, flavour, and people.</p>
+        <div class="about-stats">
+            <div>
+                <div class="about-stat-num">2010</div>
+                <div class="about-stat-label">Founded</div>
+            </div>
+            <div>
+                <div class="about-stat-num">15+</div>
+                <div class="about-stat-label">Years Serving</div>
+            </div>
+            <div>
+                <div class="about-stat-num">50k+</div>
+                <div class="about-stat-label">Happy Guests</div>
+            </div>
+            <div>
+                <div class="about-stat-num">3</div>
+                <div class="about-stat-label">Awards Won</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR STORY -->
+    <section class="story-section">
+        <div class="section-head">
+            <div class="pill-orange">How We Started</div>
+            <h2>Our Story</h2>
+            <p>A journey built on love, food and family</p>
+        </div>
+        <div class="story-grid">
+            <div class="story-img">🍽️</div>
+            <div class="story-text">
+                <h3>From Family Kitchen to Fine Dining</h3>
+                <p>LaMaison was founded in 2010 by the Rossi family in the heart of the city. What started as a small 12-table bistro quickly became a neighbourhood favourite, known for its handmade pasta and warm hospitality.</p>
+                <p>In 2015, we expanded our kitchen and introduced our online delivery service, bringing LaMaison's flavours directly to your home. Today, we serve over 500 guests daily with the same love and care that defined our very first day.</p>
+                <p>Every dish we serve carries the spirit of our grandmother's recipes — simple, honest, and made with the finest local ingredients.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MISSION & VALUES -->
+    <section class="mission-section">
+        <div class="section-head">
+            <div class="pill-orange">What Drives Us</div>
+            <h2>Our Mission &amp; Values</h2>
+            <p>We believe great food brings people together</p>
+        </div>
+        <div class="mission-grid">
+            <div class="mission-card">
+                <div class="mission-icon">🌿</div>
+                <div class="mission-title">Fresh &amp; Local</div>
+                <div class="mission-desc">We source every ingredient from local farms and suppliers, ensuring maximum freshness in every bite.</div>
+            </div>
+            <div class="mission-card">
+                <div class="mission-icon">❤️</div>
+                <div class="mission-title">Made with Love</div>
+                <div class="mission-desc">Every dish is prepared with passion and care by our award-winning culinary team.</div>
+            </div>
+            <div class="mission-card">
+                <div class="mission-icon">🌍</div>
+                <div class="mission-title">Sustainable</div>
+                <div class="mission-desc">We are committed to eco-friendly packaging and reducing our carbon footprint every day.</div>
+            </div>
+            <div class="mission-card">
+                <div class="mission-icon">🤝</div>
+                <div class="mission-title">Community First</div>
+                <div class="mission-desc">We give back to our local community through food drives and culinary training programmes.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR STAR CHEFS -->
+    <section class="about-chefs-section">
+        <div class="section-head">
+            <div class="pill-orange" style="background:rgba(226,176,74,0.15);color:var(--gold);">Meet the Team</div>
+            <h2 class="light">Our Star Chefs</h2>
+            <p>The talented hands behind every delicious dish</p>
+        </div>
+        <div class="about-chefs-row">
+            <div class="about-chef-card">
+                <div class="about-chef-avatar">👨‍🍳</div>
+                <div class="about-chef-name">Chef Marco Rossi</div>
+                <div class="about-chef-role">Head Chef — Italian Cuisine</div>
+                <div class="about-chef-desc">With 15 years of Michelin-star experience, Marco leads our kitchen with passion and precision. Specialises in handmade pasta and slow-cooked sauces.</div>
+            </div>
+            <div class="about-chef-card">
+                <div class="about-chef-avatar">👩‍🍳</div>
+                <div class="about-chef-name">Chef Aisha Nair</div>
+                <div class="about-chef-role">Sous Chef — Fusion</div>
+                <div class="about-chef-desc">Trained in Paris and Tokyo, Aisha brings bold fusion flavours that beautifully blend Eastern and Western culinary traditions into every plate.</div>
+            </div>
+            <div class="about-chef-card">
+                <div class="about-chef-avatar">🧑‍🍳</div>
+                <div class="about-chef-name">Chef Leon Park</div>
+                <div class="about-chef-role">Pastry Chef — Desserts</div>
+                <div class="about-chef-desc">Award-winning pastry artist known for his signature chocolate fondant and seasonal fruit tarts. Leon turns every dessert into a work of art.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="timeline-section">
+        <div class="section-head">
+            <div class="pill-orange">Our Journey</div>
+            <h2>Restaurant Timeline</h2>
+            <p>Key milestones in our story</p>
+        </div>
+        <div class="timeline">
+            <div class="tl-item">
+                <div class="tl-year">2010</div>
+                <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+                <div class="tl-content">
+                    <div class="tl-title">LaMaison Founded</div>
+                    <div class="tl-desc">The Rossi family opens a 12-table bistro in the heart of the city with a dream of bringing fine dining to everyone.</div>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-year">2013</div>
+                <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+                <div class="tl-content">
+                    <div class="tl-title">First Award Won</div>
+                    <div class="tl-desc">LaMaison wins the City's Best Italian Restaurant award, cementing its reputation for excellence.</div>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-year">2015</div>
+                <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+                <div class="tl-content">
+                    <div class="tl-title">Kitchen Expanded</div>
+                    <div class="tl-desc">We doubled our kitchen capacity and introduced online delivery, bringing LaMaison to homes across the city.</div>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-year">2018</div>
+                <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+                <div class="tl-content">
+                    <div class="tl-title">New Chefs Joined</div>
+                    <div class="tl-desc">Chef Aisha and Chef Leon joined the team, bringing new flavours and expanding our menu significantly.</div>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-year">2022</div>
+                <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+                <div class="tl-content">
+                    <div class="tl-title">50,000 Customers</div>
+                    <div class="tl-desc">We celebrated serving our 50,000th guest — a milestone that fills our entire team with immense pride.</div>
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-year">2026</div>
+                <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+                <div class="tl-content">
+                    <div class="tl-title">Today &amp; Beyond</div>
+                    <div class="tl-desc">We continue growing, innovating, and serving with the same passion that started it all in 2010.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT WE STAND FOR -->
+    <section class="values-section">
+        <div class="section-head">
+            <div class="pill-orange">Our Principles</div>
+            <h2>What We Stand For</h2>
+            <p>The values that guide everything we do</p>
+        </div>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">🎯</div>
+                <div class="value-title">Quality Always</div>
+                <div class="value-desc">We never compromise on the quality of ingredients or preparation.</div>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🌱</div>
+                <div class="value-title">Sustainability</div>
+                <div class="value-desc">Eco-friendly packaging and locally sourced ingredients every day.</div>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">😊</div>
+                <div class="value-title">Guest First</div>
+                <div class="value-desc">Every decision we make starts with the guest experience in mind.</div>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🔥</div>
+                <div class="value-title">Passion</div>
+                <div class="value-desc">We cook with love and serve with pride in every single dish.</div>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🤝</div>
+                <div class="value-title">Community</div>
+                <div class="value-desc">We give back to the neighbourhood that made us who we are.</div>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">💡</div>
+                <div class="value-title">Innovation</div>
+                <div class="value-desc">Always experimenting with new flavours while honouring tradition.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="about-cta">
+        <h2>Ready to Experience LaMaison?</h2>
+        <p>Join thousands of happy guests and taste the difference that passion makes</p>
+        <div class="about-cta-btns">
+            <button class="cta-btn-dark" onclick="window.location.href='menu.html'">Explore our menu</button>
+            <button class="cta-btn-outline-dark" onclick="window.location.href='contact.html'">Contact us</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-col">
+                <div class="footer-logo">La<span>Maison</span></div>
+                <p class="footer-desc">A fine dining restaurant delivering unforgettable experiences since 2015.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="../index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <a href="menu.html">Starters</a>
+                <a href="menu.html">Main Course</a>
+                <a href="menu.html">Desserts</a>
+                <a href="menu.html">Drinks</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <a href="#">📍 42 Gourmet Lane, City</a>
+                <a href="#">📞 +1 (555) 123-4567</a>
+                <a href="#">✉️ hello@lamaison.com</a>
+                <a href="#">🕐 Mon–Sun: 9am–12am</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 LaMaison Restaurant. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/cart.js"></script>
 
 </body>
 </html>

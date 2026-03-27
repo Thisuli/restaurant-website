@@ -3,14 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LaMaison - Food Detail</title>
+    <title>LaMaison - Truffle Pasta</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/food-detail.css">
 </head>
 <body>
 
-    <!-- Food detail page content goes here -->
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">La<span>Maison</span></div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="cart-icon" onclick="window.location.href='menu.html'">
+                🛒 <span class="cart-count" id="cart-count">0</span>
+            </div>
+            <button class="btn-gold" onclick="window.location.href='menu.html'">Order Now</button>
+        </div>
+    </nav>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb">
+        <a href="../index.html" style="color:var(--gray);">Home</a>
+        <span>›</span>
+        <a href="menu.html" style="color:var(--gray);">Menu</a>
+        <span>›</span>
+        <a href="menu.html" style="color:var(--gray);">Main Course</a>
+        <span>›</span>
+        <span class="current">Truffle Pasta</span>
+    </div>
+
+    <!-- FOOD DETAIL BODY -->
+    <div class="food-detail-body">
+
+        <!-- LEFT — IMAGE + PORTION -->
+        <div class="food-img-side">
+            <div class="food-main-img">
+                <img src="../images/Truffle Pasta.jpg" alt="Truffle Pasta" id="main-food-img" />
+            </div>
+            <div class="food-thumbs">
+                <div class="food-thumb active" onclick="changeImg('../images/pasta.jpg', this)">
+                    <img src="../images/Handmade Tagliatelle.jpg" alt="" />
+                </div>
+                <div class="food-thumb" onclick="changeImg('../images/steak.jpg', this)">
+                    <img src="../images/Olive Oil.jpg" alt="" />
+                </div>
+                <div class="food-thumb" onclick="changeImg('../images/salad.jpg', this)">
+                    <img src="../images/Parmigiano.jpg" alt="" />
+                </div>
+                <div class="food-thumb" onclick="changeImg('../images/pizza.jpg', this)">
+                    <img src="../images/Fresh Herbs.jpg" alt="" />
+                </div>
+            </div>
+
+            <!-- PORTION SIZE -->
+            <div class="portion-section">
+                <div class="portion-title">Portion Size</div>
+                <button class="portion-btn" onclick="selectPortion(this, 14.99)">Small — $14.99</button>
+                <button class="portion-btn active" onclick="selectPortion(this, 18.99)">Regular — $18.99</button>
+                <button class="portion-btn" onclick="selectPortion(this, 23.99)">Large — $23.99</button>
+            </div>
+        </div>
+
+        <!-- RIGHT — INFO -->
+        <div class="food-info-side">
+            <div class="food-badges">
+                <span class="food-badge-cat">Main Course</span>
+                <span class="food-badge-pop">⭐ Most Popular</span>
+            </div>
+
+            <div class="food-detail-name">Truffle Pasta</div>
+
+            <div class="food-rating-row">
+                <span class="food-stars">★★★★★</span>
+                <span class="food-rating-num">4.9</span>
+                <span class="food-review-count">(248 reviews)</span>
+            </div>
+
+            <div class="food-price-row">
+                <div class="food-main-price" id="current-price">$18.99</div>
+                <div class="food-old-price">$24.99</div>
+                <div class="food-save">Save $6</div>
+            </div>
+
+            <div class="food-description">
+                A luxurious plate of handmade tagliatelle tossed in a rich black truffle cream sauce, finished with freshly grated Parmigiano-Reggiano and a drizzle of extra virgin olive oil. A true celebration of Italian flavour crafted by Chef Marco Rossi.
+            </div>
+
+            <div class="ingredients-title">Key Ingredients</div>
+            <div class="ingredients-grid">
+                <span class="ingredient-tag">🍝 Handmade Tagliatelle</span>
+                <span class="ingredient-tag">🍄 Black Truffle</span>
+                <span class="ingredient-tag">🧀 Parmigiano</span>
+                <span class="ingredient-tag">🧄 Garlic</span>
+                <span class="ingredient-tag">🌿 Fresh Herbs</span>
+                <span class="ingredient-tag">🫒 Olive Oil</span>
+                <span class="ingredient-tag">🧈 Butter</span>
+                <span class="ingredient-tag">🥛 Cream</span>
+            </div>
+
+            <div class="order-row">
+                <div class="qty-box">
+                    <button class="qty-btn" onclick="changeQty(-1)">−</button>
+                    <span class="qty-num" id="qty-display">1</span>
+                    <button class="qty-btn" onclick="changeQty(1)">+</button>
+                </div>
+                <button class="add-order-btn" onclick="addFoodToCart()">
+                    Add to Order<br>
+                    <span id="order-price" style="font-size:14px;">$18.99</span>
+                </button>
+                <button class="wishlist-btn">♡</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- RELATED DISHES -->
+    <div class="related-section">
+        <h2>You Might Also Like</h2>
+        <p>Other dishes our guests love</p>
+        <div class="related-grid">
+            <div class="related-card" onclick="window.location.href='food-detail.html'">
+                <div class="related-img"><img src="../images/Ribeye Steak.jpg" alt="Ribeye Steak" /></div>
+                <div class="related-body">
+                    <div class="related-name">Ribeye Steak</div>
+                    <div class="related-price">$34.99</div>
+                </div>
+            </div>
+            <div class="related-card" onclick="window.location.href='food-detail.html'">
+                <div class="related-img"><img src="../images/Ramen Bowl.jpg" alt="Ramen Bowl" /></div>
+                <div class="related-body">
+                    <div class="related-name">Ramen Bowl</div>
+                    <div class="related-price">$16.99</div>
+                </div>
+            </div>
+            <div class="related-card" onclick="window.location.href='food-detail.html'">
+                <div class="related-img"><img src="../images/Garden Salad.jpg" alt="Garden Salad" /></div>
+                <div class="related-body">
+                    <div class="related-name">Garden Salad</div>
+                    <div class="related-price">$9.99</div>
+                </div>
+            </div>
+            <div class="related-card" onclick="window.location.href='food-detail.html'">
+                <div class="related-img"><img src="../images/Margherita Pizza.jpg" alt="Margherita Pizza" /></div>
+                <div class="related-body">
+                    <div class="related-name">Margherita Pizza</div>
+                    <div class="related-price">$14.99</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-col">
+                <div class="footer-logo">La<span>Maison</span></div>
+                <p class="footer-desc">A fine dining restaurant delivering unforgettable experiences since 2015.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="../index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <a href="menu.html">Starters</a>
+                <a href="menu.html">Main Course</a>
+                <a href="menu.html">Desserts</a>
+                <a href="menu.html">Drinks</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <a href="#">📍 42 Gourmet Lane, City</a>
+                <a href="#">📞 +1 (555) 123-4567</a>
+                <a href="#">✉️ hello@lamaison.com</a>
+                <a href="#">🕐 Mon–Sun: 9am–12am</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 LaMaison Restaurant. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/cart.js"></script>
+    <script>
+    let currentPrice = 18.99;
+    let currentQty = 1;
+
+    function changeImg(src, el) {
+        document.getElementById('main-food-img').src = src;
+        document.querySelectorAll('.food-thumb').forEach(t => t.classList.remove('active'));
+        el.classList.add('active');
+    }
+
+    function selectPortion(btn, price) {
+        document.querySelectorAll('.portion-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentPrice = price;
+        updateOrderPrice();
+    }
+
+    function changeQty(val) {
+        currentQty = Math.max(1, currentQty + val);
+        document.getElementById('qty-display').textContent = currentQty;
+        updateOrderPrice();
+    }
+
+    function updateOrderPrice() {
+        const total = (currentPrice * currentQty).toFixed(2);
+        document.getElementById('current-price').textContent = '$' + currentPrice.toFixed(2);
+        document.getElementById('order-price').textContent = '$' + total;
+    }
+
+    function addFoodToCart() {
+        addToCart('Truffle Pasta', currentPrice * currentQty);
+    }
+    </script>
 
 </body>
 </html>

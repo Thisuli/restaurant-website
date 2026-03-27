@@ -7,10 +7,226 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/contact.css">
 </head>
 <body>
 
-    <!-- Contact page content goes here -->
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">La<span>Maison</span></div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="cart-icon" onclick="window.location.href='menu.html'">
+                🛒 <span class="cart-count" id="cart-count">0</span>
+            </div>
+            <button class="btn-gold" onclick="window.location.href='menu.html'">Order Now</button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="contact-hero">
+        <div class="pill-orange">Get in Touch</div>
+        <h1>We'd Love to <span>Hear From You</span></h1>
+        <p>Have a question, feedback, or want to make a reservation? Our team is always happy to help.</p>
+    </section>
+
+    <!-- CONTACT BODY -->
+    <div class="contact-body">
+
+        <!-- FORM SIDE -->
+        <div class="contact-form-side">
+            <h2>Send Us a Message</h2>
+            <p>Fill in the form below and we'll get back to you within 24 hours</p>
+
+            <div class="contact-success" id="contact-success">
+                ✅ Message sent successfully! We'll get back to you within 24 hours.
+            </div>
+
+            <div class="contact-name-row">
+                <div class="c-fg">
+                    <label>First Name</label>
+                    <input type="text" id="c-firstname" placeholder="Enter your first name" />
+                </div>
+                <div class="c-fg">
+                    <label>Last Name</label>
+                    <input type="text" id="c-lastname" placeholder="Enter your last name" />
+                </div>
+            </div>
+
+            <div class="c-fg">
+                <label>Email Address</label>
+                <input type="email" id="c-email" placeholder="Enter your email address" />
+            </div>
+
+            <div class="c-fg">
+                <label>Phone Number</label>
+                <input type="tel" id="c-phone" placeholder="Enter your phone number" />
+            </div>
+
+            <div class="c-fg">
+                <label>Subject</label>
+                <select id="c-subject">
+                    <option value="">Select a subject</option>
+                    <option>General Inquiry</option>
+                    <option>Table Reservation</option>
+                    <option>Order Issue</option>
+                    <option>Feedback</option>
+                    <option>Partnership</option>
+                </select>
+            </div>
+
+            <div class="c-fg">
+                <label>Message</label>
+                <textarea id="c-message" placeholder="Write your message here......"></textarea>
+            </div>
+
+            <button class="contact-send-btn" onclick="sendMessage()">Send Message</button>
+        </div>
+
+        <!-- INFO SIDE -->
+        <div class="contact-info-side">
+            <h2>Contact Details</h2>
+            <p>Reach us through any of these channels</p>
+
+            <div class="contact-info-item">
+                <div class="contact-info-icon">📍</div>
+                <div>
+                    <div class="contact-info-label">Address</div>
+                    <div class="contact-info-val">42 Gourmet Lane,<br>Downtown District, City</div>
+                </div>
+            </div>
+            <div class="contact-info-item">
+                <div class="contact-info-icon">📞</div>
+                <div>
+                    <div class="contact-info-label">Phone</div>
+                    <div class="contact-info-val">+1 (555) 123-4567</div>
+                </div>
+            </div>
+            <div class="contact-info-item">
+                <div class="contact-info-icon">✉️</div>
+                <div>
+                    <div class="contact-info-label">Email</div>
+                    <div class="contact-info-val">hello@lamaison.com</div>
+                </div>
+            </div>
+            <div class="contact-info-item">
+                <div class="contact-info-icon">🌐</div>
+                <div>
+                    <div class="contact-info-label">Website</div>
+                    <div class="contact-info-val">www.lamaison.com</div>
+                </div>
+            </div>
+
+            <hr class="contact-divider" />
+
+            <div class="hours-title">Opening Hours</div>
+            <div class="hours-row">
+                <div class="hours-day">Monday – Friday</div>
+                <div class="hours-time">9:00am – 10:00pm</div>
+            </div>
+            <div class="hours-row">
+                <div class="hours-day">Saturday</div>
+                <div class="hours-time">10:00am – 11:00pm</div>
+            </div>
+            <div class="hours-row">
+                <div class="hours-day">Sunday</div>
+                <div class="hours-time">10:00am – 9:00pm</div>
+            </div>
+            <div class="hours-row">
+                <div class="hours-day">Public Holidays</div>
+                <div class="hours-time">11:00am – 8:00pm</div>
+            </div>
+
+            <div class="follow-title">Follow us</div>
+            <div class="social-icons-row">
+                <a href="#" class="social-icon-btn si-fb">f</a>
+                <a href="#" class="social-icon-btn si-yt">▶</a>
+                <a href="#" class="social-icon-btn si-tk">♪</a>
+                <a href="#" class="social-icon-btn si-tw">t</a>
+                <a href="#" class="social-icon-btn si-ig">📷</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-col">
+                <div class="footer-logo">La<span>Maison</span></div>
+                <p class="footer-desc">A fine dining restaurant delivering unforgettable experiences since 2015.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="../index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <a href="menu.html">Starters</a>
+                <a href="menu.html">Main Course</a>
+                <a href="menu.html">Desserts</a>
+                <a href="menu.html">Drinks</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <a href="#">📍 42 Gourmet Lane, City</a>
+                <a href="#">📞 +1 (555) 123-4567</a>
+                <a href="#">✉️ hello@lamaison.com</a>
+                <a href="#">🕐 Mon–Sun: 9am–12am</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 LaMaison Restaurant. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/cart.js"></script>
+    <script>
+    function sendMessage() {
+        const firstName = document.getElementById('c-firstname').value.trim();
+        const email = document.getElementById('c-email').value.trim();
+        const message = document.getElementById('c-message').value.trim();
+
+        if (!firstName || !email || !message) {
+            alert('Please fill in all required fields!');
+            return;
+        }
+
+        const messages = JSON.parse(localStorage.getItem('lamaison_messages')) || [];
+        messages.push({
+            firstName,
+            lastName: document.getElementById('c-lastname').value.trim(),
+            email,
+            phone: document.getElementById('c-phone').value.trim(),
+            subject: document.getElementById('c-subject').value,
+            message,
+            date: new Date().toLocaleDateString()
+        });
+        localStorage.setItem('lamaison_messages', JSON.stringify(messages));
+
+        document.getElementById('contact-success').classList.add('show');
+        document.getElementById('c-firstname').value = '';
+        document.getElementById('c-lastname').value = '';
+        document.getElementById('c-email').value = '';
+        document.getElementById('c-phone').value = '';
+        document.getElementById('c-subject').value = '';
+        document.getElementById('c-message').value = '';
+    }
+    </script>
 
 </body>
 </html>
