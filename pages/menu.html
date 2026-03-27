@@ -7,10 +7,444 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/menu.css">
 </head>
 <body>
 
-    <!-- Menu page content goes here -->
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">La<span>Maison</span></div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="menu.html" class="active">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="cart-icon" onclick="window.location.href='menu.html'">
+                🛒
+                <span class="cart-count" id="cart-count">0</span>
+            </div>
+            <button class="btn-gold" onclick="window.location.href='menu.html'">Order Now</button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="menu-hero">
+        <div class="pill-orange">Our Full Menu</div>
+        <h1>Explore Every <span>Delicious Dish</span></h1>
+        <p>From starters to desserts — discover flavours crafted with love and the finest ingredients</p>
+    </section>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+        <div class="filter-left">
+            <span class="filter-label">Filter :</span>
+            <button class="filter-btn active" onclick="filterMenu('all', this)">All</button>
+            <button class="filter-btn" onclick="filterMenu('starter', this)">Starters</button>
+            <button class="filter-btn" onclick="filterMenu('main', this)">Main Course</button>
+            <button class="filter-btn" onclick="filterMenu('grill', this)">Grill</button>
+            <button class="filter-btn" onclick="filterMenu('pasta', this)">Pasta</button>
+            <button class="filter-btn" onclick="filterMenu('dessert', this)">Desserts</button>
+            <button class="filter-btn" onclick="filterMenu('drink', this)">Drinks</button>
+        </div>
+        <div class="search-box">
+            <span>🔍</span>
+            <input type="text" id="search-input" placeholder="Search Dishes..." onkeyup="searchDishes()" />
+        </div>
+    </div>
+
+    <!-- MENU CONTENT -->
+    <div class="menu-content">
+
+        <!-- STARTERS -->
+        <div class="menu-section" id="section-starter">
+            <h2 class="menu-section-title">Starters</h2>
+            <p class="menu-section-sub">Light bites to begin your journey</p>
+            <div class="menu-grid">
+
+                <div class="menu-card" data-category="starter" onclick="goToFood('Garden Salad', 'starter')">
+                    <div class="menu-card-img">
+                        <img src="../images/Garden Salad.jpg" alt="Garden Salad" />
+                        <span class="badge-new">NEW</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-cat">Starter</div>
+                        <div class="menu-name">Garden Salad</div>
+                        <div class="menu-row">
+                            <div class="menu-price">$9.99</div>
+                            <div class="menu-rating">★ 4.9</div>
+                        </div>
+                        <button class="menu-cart-btn" onclick="event.stopPropagation(); addToCart('Garden Salad', 9.99)">+ Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="starter" onclick="goToFood('Tomato Soup', 'starter')">
+                    <div class="menu-card-img">
+                        <img src="../images/Tomato Soup.jpg" alt="Tomato Soup" />
+                        <span class="badge-hot">HOT</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-cat">Starter</div>
+                        <div class="menu-name">Tomato Soup</div>
+                        <div class="menu-row">
+                            <div class="menu-price">$7.99</div>
+                            <div class="menu-rating">★ 4.8</div>
+                        </div>
+                        <button class="menu-cart-btn" onclick="event.stopPropagation(); addToCart('Tomato Soup', 7.99)">+ Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="starter" onclick="goToFood('Cheese Bruschetta', 'starter')">
+                    <div class="menu-card-img">
+                        <img src="../images/Cheese Bruschetta.jpg" alt="Cheese Bruschetta" />
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-cat">Starter</div>
+                        <div class="menu-name">Cheese Bruschetta</div>
+                        <div class="menu-row">
+                            <div class="menu-price">$8.99</div>
+                            <div class="menu-rating">★ 4.9</div>
+                        </div>
+                        <button class="menu-cart-btn" onclick="event.stopPropagation(); addToCart('Cheese Bruschetta', 8.99)">+ Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="starter" onclick="goToFood('Garlic Prawns', 'starter')">
+                    <div class="menu-card-img">
+                        <img src="../images/Garlic Prawns.jpg" alt="Garlic Prawns" />
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-cat">Starter</div>
+                        <div class="menu-name">Garlic Prawns</div>
+                        <div class="menu-row">
+                            <div class="menu-price">$13.99</div>
+                            <div class="menu-rating">★ 4.9</div>
+                        </div>
+                        <button class="menu-cart-btn" onclick="event.stopPropagation(); addToCart('Garlic Prawns', 13.99)">+ Add to Cart</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- MAIN COURSE -->
+        <div class="menu-section" id="section-main">
+            <h2 class="menu-section-title">Main Course</h2>
+            <p class="menu-section-sub">Hearty dishes that satisfy every craving</p>
+            <div class="menu-grid">
+
+                <div class="menu-card" data-category="main pasta" onclick="goToFood('Truffle Pasta', 'main')">
+                    <div class="menu-card-img">
+                        <img src="../images/Truffle Pasta.jpg" alt="Truffle Pasta" />
+                        <span class="badge-hot">HOT</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-cat">Main Course</div>
+                        <div class="menu-name">Truffle Pasta</div>
+                        <div class="menu-row">
+                            <div class="menu-price">$18.99</div>
+                            <div class="menu-rating">★ 4.9</div>
+                        </div>
+                        <button class="menu-cart-btn" onclick="event.stopPropagation(); addToCart('Truffle Pasta', 18.99)">+ Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="main grill" onclick="goToFood('Ribeye Steak', 'main')">
+                    <div class="menu-card-img">
+                        <img src="../images/Ribeye Steak.jpg" alt="Ribeye Steak" />
+                        <span class="badge-new">NEW</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-cat">Grill</div>
+                        <div class="menu-name">Ribeye Steak</div>
+                        <div class="menu-row">
+                            <div class="menu-price">$34.99</div>
+                            <div class="menu-rating">★ 4.8</div>
+                        </div>
+                        <button class="menu-cart-btn" onclick="event.stopPropagation(); addToCart('Ribeye Steak', 34.99)">+ Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="main" onclick="goToFood('Margherita Pizza', 'main')">
+                    <div class="menu-card-img">
+                        <img src="../images/Margherita Pizza.jpg" alt="Margherita Pizza" />
+                        <span class="badge-hot">HOT</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-cat">Pizza</div>
+                        <div class="menu-name">Margherita Pizza</div>
+                        <div class="menu-row">
+                            <div class="menu-price">$14.99</div>
+                            <div class="menu-rating">★ 4.9</div>
+                        </div>
+                        <button class="menu-cart-btn" onclick="event.stopPropagation(); addToCart('Margherita Pizza', 14.99)">+ Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="main" onclick="goToFood('Ramen Bowl', 'main')">
+                    <div class="menu-card-img">
+                        <img src="../images/Ramen Bowl.jpg" alt="Ramen Bowl" />
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-cat">Main Course</div>
+                        <div class="menu-name">Ramen Bowl</div>
+                        <div class="menu-row">
+                            <div class="menu-price">$16.99</div>
+                            <div class="menu-rating">★ 4.9</div>
+                        </div>
+                        <button class="menu-cart-btn" onclick="event.stopPropagation(); addToCart('Ramen Bowl', 16.99)">+ Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="main" onclick="goToFood('Chicken Tagine', 'main')">
+                    <div class="menu-card-img">
+                        <img src="../images/Chicken Tagine.jpg" alt="Chicken Tagine" />
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-cat">Main Course</div>
+                        <div class="menu-name">Chicken Tagine</div>
+                        <div class="menu-row">
+                            <div class="menu-price">$18.99</div>
+                            <div class="menu-rating">★ 4.9</div>
+                        </div>
+                        <button class="menu-cart-btn" onclick="event.stopPropagation(); addToCart('Chicken Tagine', 18.99)">+ Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="main" onclick="goToFood('Lamb Stew', 'main')">
+                    <div class="menu-card-img">
+                        <img src="../images/Lamb Stew.jpg" alt="Lamb Stew" />
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-cat">Main Course</div>
+                        <div class="menu-name">Lamb Stew</div>
+                        <div class="menu-row">
+                            <div class="menu-price">$26.99</div>
+                            <div class="menu-rating">★ 4.8</div>
+                        </div>
+                        <button class="menu-cart-btn" onclick="event.stopPropagation(); addToCart('Lamb Stew', 26.99)">+ Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="main grill" onclick="goToFood('Grilled Salmon', 'main')">
+                    <div class="menu-card-img">
+                        <img src="../images/Grilled Salmon.jpg" alt="Grilled Salmon" />
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-cat">Grill</div>
+                        <div class="menu-name">Grilled Salmon</div>
+                        <div class="menu-row">
+                            <div class="menu-price">$28.99</div>
+                            <div class="menu-rating">★ 4.9</div>
+                        </div>
+                        <button class="menu-cart-btn" onclick="event.stopPropagation(); addToCart('Grilled Salmon', 28.99)">+ Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="main grill" onclick="goToFood('Wagyu Burger', 'main')">
+                    <div class="menu-card-img">
+                        <img src="../images/Wagyu Burger.jpg" alt="Wagyu Burger" />
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-cat">Grill</div>
+                        <div class="menu-name">Wagyu Burger</div>
+                        <div class="menu-row">
+                            <div class="menu-price">$20.99</div>
+                            <div class="menu-rating">★ 4.8</div>
+                        </div>
+                        <button class="menu-cart-btn" onclick="event.stopPropagation(); addToCart('Wagyu Burger', 20.99)">+ Add to Cart</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- DESSERTS -->
+        <div class="menu-section" id="section-dessert">
+            <h2 class="menu-section-title">Desserts</h2>
+            <p class="menu-section-sub">Sweet endings to a perfect meal</p>
+            <div class="menu-grid">
+
+                <div class="menu-card" data-category="dessert" onclick="goToFood('Choc Fondant', 'dessert')">
+                    <div class="menu-card-img">
+                        <img src="../images/Choc Fondant.jpg" alt="Choc Fondant" />
+                        <span class="badge-hot">HOT</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-cat">Dessert</div>
+                        <div class="menu-name">Choc Fondant</div>
+                        <div class="menu-row">
+                            <div class="menu-price">$9.99</div>
+                            <div class="menu-rating">★ 4.9</div>
+                        </div>
+                        <button class="menu-cart-btn" onclick="event.stopPropagation(); addToCart('Choc Fondant', 9.99)">+ Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="dessert" onclick="goToFood('Vanilla Cupcake', 'dessert')">
+                    <div class="menu-card-img">
+                        <img src="../images/Vanilla Cupcake.jpg" alt="Vanilla Cupcake" />
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-cat">Dessert</div>
+                        <div class="menu-name">Vanilla Cupcake</div>
+                        <div class="menu-row">
+                            <div class="menu-price">$6.99</div>
+                            <div class="menu-rating">★ 4.8</div>
+                        </div>
+                        <button class="menu-cart-btn" onclick="event.stopPropagation(); addToCart('Vanilla Cupcake', 6.99)">+ Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="dessert" onclick="goToFood('Creme Brulee', 'dessert')">
+                    <div class="menu-card-img">
+                        <img src="../images/Crème Brûlée.jpg" alt="Creme Brulee" />
+                        <span class="badge-new">NEW</span>
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-cat">Dessert</div>
+                        <div class="menu-name">Crème Brûlée</div>
+                        <div class="menu-row">
+                            <div class="menu-price">$9.99</div>
+                            <div class="menu-rating">★ 4.8</div>
+                        </div>
+                        <button class="menu-cart-btn" onclick="event.stopPropagation(); addToCart('Creme Brulee', 9.99)">+ Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="dessert" onclick="goToFood('Gelato Trio', 'dessert')">
+                    <div class="menu-card-img">
+                        <img src="../images/Gelato Trio.jpg" alt="Gelato Trio" />
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-cat">Dessert</div>
+                        <div class="menu-name">Gelato Trio</div>
+                        <div class="menu-row">
+                            <div class="menu-price">$18.99</div>
+                            <div class="menu-rating">★ 4.9</div>
+                        </div>
+                        <button class="menu-cart-btn" onclick="event.stopPropagation(); addToCart('Gelato Trio', 18.99)">+ Add to Cart</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- DRINKS -->
+        <div class="menu-section" id="section-drink">
+            <h2 class="menu-section-title">Drinks</h2>
+            <p class="menu-section-sub">Refreshing beverages for every taste</p>
+            <div class="menu-grid">
+
+                <div class="menu-card" data-category="drink" onclick="goToFood('Fresh Lemonade', 'drink')">
+                    <div class="menu-card-img">
+                        <img src="../images/Fresh Lemonade.jpg" alt="Fresh Lemonade" />
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-cat">Drink</div>
+                        <div class="menu-name">Fresh Lemonade</div>
+                        <div class="menu-row">
+                            <div class="menu-price">$4.99</div>
+                            <div class="menu-rating">★ 4.9</div>
+                        </div>
+                        <button class="menu-cart-btn" onclick="event.stopPropagation(); addToCart('Fresh Lemonade', 4.99)">+ Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="drink" onclick="goToFood('Cappuccino', 'drink')">
+                    <div class="menu-card-img">
+                        <img src="../images/cappuccino.jpg" alt="Cappuccino" />
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-cat">Hot Drink</div>
+                        <div class="menu-name">Cappuccino</div>
+                        <div class="menu-row">
+                            <div class="menu-price">$3.99</div>
+                            <div class="menu-rating">★ 4.9</div>
+                        </div>
+                        <button class="menu-cart-btn" onclick="event.stopPropagation(); addToCart('Cappuccino', 3.99)">+ Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="drink" onclick="goToFood('Mango Smoothie', 'drink')">
+                    <div class="menu-card-img">
+                        <img src="../images/Mango Smoothie.jpg" alt="Mango Smoothie" />
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-cat">Drink</div>
+                        <div class="menu-name">Mango Smoothie</div>
+                        <div class="menu-row">
+                            <div class="menu-price">$5.99</div>
+                            <div class="menu-rating">★ 4.7</div>
+                        </div>
+                        <button class="menu-cart-btn" onclick="event.stopPropagation(); addToCart('Mango Smoothie', 5.99)">+ Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="drink" onclick="goToFood('Matcha Latte', 'drink')">
+                    <div class="menu-card-img">
+                        <img src="../images/Matcha Latte.jpg" alt="Matcha Latte" />
+                    </div>
+                    <div class="menu-card-body">
+                        <div class="menu-cat">Hot Drink</div>
+                        <div class="menu-name">Matcha Latte</div>
+                        <div class="menu-row">
+                            <div class="menu-price">$4.99</div>
+                            <div class="menu-rating">★ 4.8</div>
+                        </div>
+                        <button class="menu-cart-btn" onclick="event.stopPropagation(); addToCart('Matcha Latte', 4.99)">+ Add to Cart</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-col">
+                <div class="footer-logo">La<span>Maison</span></div>
+                <p class="footer-desc">A fine dining restaurant delivering unforgettable experiences since 2015.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="../index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <a href="#">Starters</a>
+                <a href="#">Main Course</a>
+                <a href="#">Desserts</a>
+                <a href="#">Drinks</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <a href="#">📍 42 Gourmet Lane, City</a>
+                <a href="#">📞 +1 (555) 123-4567</a>
+                <a href="#">✉️ hello@lamaison.com</a>
+                <a href="#">🕐 Mon–Sun: 9am–12am</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 LaMaison Restaurant. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/cart.js"></script>
+    <script src="../js/menu.js"></script>
 
 </body>
 </html>

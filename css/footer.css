@@ -1,0 +1,32 @@
+/* ===== FOOTER ===== */
+.footer { background:var(--deep-navy); padding:60px 60px 24px; }
+.footer-top { display:flex; gap:40px; margin-bottom:40px; }
+.footer-col { flex:1; }
+.footer-logo { color:var(--gold); font-size:20px; font-weight:700; margin-bottom:12px; display:block; }
+.footer-logo span { color:#fff; }
+.footer-desc { color:#555; font-size:13px; line-height:1.7; margin-bottom:16px; }
+.social-row { display:flex; gap:8px; }
+.soc-btn {
+    background:var(--card-navy);
+    color:var(--gold);
+    padding:8px 12px;
+    border-radius:8px;
+    font-size:12px;
+    font-weight:600;
+    transition:background 0.3s;
+}
+.soc-btn:hover { background:var(--gold); color:var(--navy); }
+.footer-col h4 { color:#fff; font-size:14px; font-weight:600; margin-bottom:16px; }
+.footer-col a { display:block; color:#555; font-size:13px; margin-bottom:8px; transition:color 0.3s; }
+.footer-col a:hover { color:var(--gold); }
+.footer-bottom {
+    border-top:0.5px solid #222;
+    padding-top:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.footer-bottom p { color:#444; font-size:12px; }
+.footer-bottom-links { display:flex; gap:20px; }
+.footer-bottom-links a { color:#444; font-size:12px; }
+.footer-bottom-links a:hover { color:var(--gold); }

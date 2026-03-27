@@ -10,7 +10,422 @@
 </head>
 <body>
 
-    <!-- Your content goes here -->
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="announcement-bar">
+        🎉 Free delivery on orders above $30 — Use code: LAMAISON20 for 20% off!
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">La<span>Maison</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="pages/menu.html">Menu</a></li>
+            <li><a href="pages/about.html">About</a></li>
+            <li><a href="pages/services.html">Services</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="cart-icon" onclick="window.location.href='pages/menu.html'">
+                🛒
+                <span class="cart-count" id="cart-count">0</span>
+            </div>
+            <button class="btn-gold" onclick="window.location.href='pages/menu.html'">Order Now</button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-text">
+            <div class="pill">✨ Fine Dining Experience</div>
+            <h1>Taste the Art of<br><span>Fine Cuisine</span></h1>
+            <p>Discover an extraordinary dining experience where every dish tells a story. Fresh ingredients, bold flavours, unforgettable moments.</p>
+            <div class="hero-buttons">
+                <button class="btn-gold" onclick="window.location.href='pages/menu.html'">Explore Menu</button>
+                <button class="btn-outline" onclick="window.location.href='pages/about.html'">Our Story</button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-num">200+</div>
+                    <div class="stat-label">Dishes</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">15k+</div>
+                    <div class="stat-label">Customers</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">4.9★</div>
+                    <div class="stat-label">Rating</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">10+</div>
+                    <div class="stat-label">Years</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="hero-img-circle">🍽️</div>
+        </div>
+    </section>
+
+    <!-- BROWSE BY CATEGORY -->
+    <section class="categories-section">
+        <div class="section-head">
+            <div class="pill-orange">Browse by Category</div>
+            <h2>What Are You Craving?</h2>
+            <p>Pick a category and explore our menu</p>
+        </div>
+        <div class="categories-row">
+            <div class="cat-item active">
+                <div class="cat-circle">🍕</div>
+                <span>Pizza</span>
+            </div>
+            <div class="cat-item">
+                <div class="cat-circle">🍝</div>
+                <span>Pasta</span>
+            </div>
+            <div class="cat-item">
+                <div class="cat-circle">🥩</div>
+                <span>Grill</span>
+            </div>
+            <div class="cat-item">
+                <div class="cat-circle">🥗</div>
+                <span>Salads</span>
+            </div>
+            <div class="cat-item">
+                <div class="cat-circle">🍜</div>
+                <span>Soups</span>
+            </div>
+            <div class="cat-item">
+                <div class="cat-circle">🍰</div>
+                <span>Desserts</span>
+            </div>
+            <div class="cat-item">
+                <div class="cat-circle">🥤</div>
+                <span>Drinks</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED DISHES -->
+    <section class="featured-section">
+        <div class="section-head">
+            <div class="pill-orange">Popular Picks</div>
+            <h2>Featured Dishes</h2>
+            <p>Handpicked favourites loved by our guests</p>
+        </div>
+        <div class="food-cards-row">
+            <div class="food-card">
+                <div class="food-card-img" style="background:#FFF3E0;">
+                    <span class="badge-hot">HOT</span>
+                    <img src="images/pasta.jpg" alt="Truffle Pasta" />
+                </div>
+                <div class="food-card-body">
+                    <div class="food-cat">Main Course</div>
+                    <div class="food-name">Truffle Pasta</div>
+                    <div class="food-row">
+                        <div class="food-price">$18.99</div>
+                        <div class="food-rating">★ 4.9</div>
+                    </div>
+                    <button class="add-cart-btn" onclick="addToCart('Truffle Pasta', 18.99)">+ Add to Cart</button>
+                </div>
+            </div>
+            <div class="food-card">
+                <div class="food-card-img" style="background:#FCE4EC;">
+                    <span class="badge-new">NEW</span>
+                    <img src="images/steak.jpg" alt="Ribeye Steak" />
+                </div>
+                <div class="food-card-body">
+                    <div class="food-cat">Grill</div>
+                    <div class="food-name">Ribeye Steak</div>
+                    <div class="food-row">
+                        <div class="food-price">$34.99</div>
+                        <div class="food-rating">★ 4.8</div>
+                    </div>
+                    <button class="add-cart-btn" onclick="addToCart('Ribeye Steak', 34.99)">+ Add to Cart</button>
+                </div>
+            </div>
+            <div class="food-card">
+                <div class="food-card-img" style="background:#E8F5E9;">
+                    <img src="images/salad.jpg" alt="Garden Salad" />
+                </div>
+                <div class="food-card-body">
+                    <div class="food-cat">Starter</div>
+                    <div class="food-name">Garden Salad</div>
+                    <div class="food-row">
+                        <div class="food-price">$9.99</div>
+                        <div class="food-rating">★ 4.7</div>
+                    </div>
+                    <button class="add-cart-btn" onclick="addToCart('Garden Salad', 9.99)">+ Add to Cart</button>
+                </div>
+            </div>
+            <div class="food-card">
+                <div class="food-card-img" style="background:#FFF9C4;">
+                    <span class="badge-hot">HOT</span>
+                    <img src="images/pizza.jpg" alt="Margherita Pizza" />
+                </div>
+                <div class="food-card-body">
+                    <div class="food-cat">Pizza</div>
+                    <div class="food-name">Margherita Pizza</div>
+                    <div class="food-row">
+                        <div class="food-price">$14.99</div>
+                        <div class="food-rating">★ 4.9</div>
+                    </div>
+                    <button class="add-cart-btn" onclick="addToCart('Margherita Pizza', 14.99)">+ Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="view-menu-btn-wrap">
+            <button class="btn-view-menu" onclick="window.location.href='pages/menu.html'">View Full Menu →</button>
+        </div>
+    </section>
+
+    <!-- SPECIAL OFFER BANNER -->
+    <section class="offer-banner-section">
+        <div class="offer-banner">
+            <div class="offer-text">
+                <h3>Weekend Special Offer! 🎉</h3>
+                <p>Get 20% off on all orders above $30 this weekend only.</p>
+                <div class="offer-code">Code: WEEKEND20</div>
+            </div>
+            <div class="offer-emoji">🍽️</div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-section">
+        <div class="section-head">
+            <div class="pill-orange">Simple Process</div>
+            <h2>How It Works</h2>
+            <p>Order your favourite food in just 3 easy steps</p>
+        </div>
+        <div class="steps-row">
+            <div class="step-item">
+                <div class="step-num">1</div>
+                <div class="step-icon">🔍</div>
+                <div class="step-title">Browse Menu</div>
+                <div class="step-desc">Explore our wide range of dishes and pick your favourites easily</div>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step-item">
+                <div class="step-num">2</div>
+                <div class="step-icon">🛒</div>
+                <div class="step-title">Add to Cart</div>
+                <div class="step-desc">Select your items and customise your order easily</div>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step-item">
+                <div class="step-num">3</div>
+                <div class="step-icon">📦</div>
+                <div class="step-title">Place Order</div>
+                <div class="step-desc">Pay securely and track your delivery in real time</div>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step-item">
+                <div class="step-num">4</div>
+                <div class="step-icon">🚀</div>
+                <div class="step-title">Enjoy Food</div>
+                <div class="step-desc">Receive hot fresh food at your doorstep and enjoy!</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-section">
+        <div class="section-head">
+            <div class="pill-orange">Why Us</div>
+            <h2>Why Choose LaMaison?</h2>
+            <p>We go above and beyond for every guest</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon">🌿</div>
+                <div class="why-title">Fresh Ingredients</div>
+                <div class="why-desc">Sourced daily from local farms for maximum freshness</div>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🚀</div>
+                <div class="why-title">Fast Delivery</div>
+                <div class="why-desc">Hot food at your door in under 30 minutes</div>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">👨‍🍳</div>
+                <div class="why-title">Expert Chefs</div>
+                <div class="why-desc">Award-winning culinary team with 10+ years experience</div>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">💳</div>
+                <div class="why-title">Easy Payment</div>
+                <div class="why-desc">Multiple secure payment methods accepted</div>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🕐</div>
+                <div class="why-title">Open Late</div>
+                <div class="why-desc">Available 7 days a week from 9am to midnight</div>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">♻️</div>
+                <div class="why-title">Eco Packaging</div>
+                <div class="why-desc">100% recyclable and sustainable packaging</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR STAR CHEFS -->
+    <section class="chefs-section">
+        <div class="section-head">
+            <div class="pill-orange" style="background:rgba(226,176,74,0.15);color:#E2B04A;">Meet the Team</div>
+            <h2 class="light">Our Star Chefs</h2>
+            <p>The talented hands behind every delicious dish</p>
+        </div>
+        <div class="chefs-row">
+            <div class="chef-card">
+                <div class="chef-avatar">👨‍🍳</div>
+                <div class="chef-name">Chef Marco Rossi</div>
+                <div class="chef-role">Head Chef — Italian Cuisine</div>
+                <div class="chef-desc">15 years of Michelin-star experience. Specialises in handmade pasta and slow-cooked sauces.</div>
+            </div>
+            <div class="chef-card">
+                <div class="chef-avatar">👩‍🍳</div>
+                <div class="chef-name">Chef Aisha Nair</div>
+                <div class="chef-role">Sous Chef — Fusion</div>
+                <div class="chef-desc">Trained in Paris and Tokyo. Brings bold fusion flavours that blend East and West beautifully.</div>
+            </div>
+            <div class="chef-card">
+                <div class="chef-avatar">🧑‍🍳</div>
+                <div class="chef-name">Chef Leon Park</div>
+                <div class="chef-role">Pastry Chef — Desserts</div>
+                <div class="chef-desc">Award-winning pastry artist known for his signature chocolate fondant and fruit tarts.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOD GALLERY -->
+    <section class="gallery-section">
+        <div class="section-head">
+            <div class="pill-orange">Our Gallery</div>
+            <h2>Food That Speaks for Itself</h2>
+            <p>A glimpse into the LaMaison kitchen</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="images/pasta.jpg" alt="Pasta" /></div>
+            <div class="gallery-item"><img src="images/steak.jpg" alt="Steak" /></div>
+            <div class="gallery-item"><img src="images/salad.jpg" alt="Salad" /></div>
+            <div class="gallery-item"><img src="images/Noodles.jpg" alt="Ramen" /></div>
+            <div class="gallery-item"><img src="images/Cake.jpg" alt="Fondant" /></div>
+            <div class="gallery-item"><img src="images/pizza.jpg" alt="Pizza" /></div>
+            <div class="gallery-item"><img src="images/Drinks.jpg" alt="Lemonade" /></div>
+            <div class="gallery-item"><img src="images/cappuccino.jpg" alt="Cappuccino" /></div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section">
+        <div class="section-head">
+            <div class="pill-orange" style="background:rgba(226,176,74,0.15);color:#E2B04A;">Testimonials</div>
+            <h2 class="light">What Our Guests Say</h2>
+            <p>Real reviews from real people</p>
+        </div>
+        <div class="testi-row">
+            <div class="testi-card">
+                <div class="testi-stars">★★★★★</div>
+                <div class="testi-text">"Absolutely incredible food. The truffle pasta melted in my mouth. Will definitely be coming back!"</div>
+                <div class="testi-author">
+                    <div class="testi-avatar">S</div>
+                    <div>
+                        <div class="testi-name">Sarah M.</div>
+                        <div class="testi-role">Regular Guest</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card">
+                <div class="testi-stars">★★★★★</div>
+                <div class="testi-text">"Best dining experience in the city. The ambience and food quality are simply unmatched."</div>
+                <div class="testi-author">
+                    <div class="testi-avatar">J</div>
+                    <div>
+                        <div class="testi-name">James R.</div>
+                        <div class="testi-role">Food Blogger</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card">
+                <div class="testi-stars">★★★★☆</div>
+                <div class="testi-text">"Delivery was super fast and the food arrived piping hot. Amazing service overall!"</div>
+                <div class="testi-author">
+                    <div class="testi-avatar">A</div>
+                    <div>
+                        <div class="testi-name">Aisha K.</div>
+                        <div class="testi-role">Verified Order</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter-section">
+        <div class="newsletter-content">
+            <div class="newsletter-text">
+                <h3>Stay in the Loop 🍴</h3>
+                <p>Subscribe for exclusive deals, new dishes and weekly specials</p>
+            </div>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Enter your Email Address" id="newsletter-email" />
+                <button onclick="subscribeNewsletter()">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-col">
+                <div class="footer-logo">La<span>Maison</span></div>
+                <p class="footer-desc">A fine dining restaurant delivering unforgettable experiences since 2015. Fresh ingredients, bold flavours.</p>
+                <div class="social-row">
+                    <a href="#" class="soc-btn">FB</a>
+                    <a href="#" class="soc-btn">IG</a>
+                    <a href="#" class="soc-btn">TW</a>
+                    <a href="#" class="soc-btn">YT</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="pages/menu.html">Menu</a>
+                <a href="pages/about.html">About Us</a>
+                <a href="pages/services.html">Services</a>
+                <a href="pages/contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <a href="pages/menu.html">Starters</a>
+                <a href="pages/menu.html">Main Course</a>
+                <a href="pages/menu.html">Desserts</a>
+                <a href="pages/menu.html">Drinks</a>
+                <a href="pages/menu.html">Special Offers</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <a href="#">📍 42 Gourmet Lane, City</a>
+                <a href="#">📞 +1 (555) 123-4567</a>
+                <a href="#">✉️ hello@lamaison.com</a>
+                <a href="#">🕐 Mon–Sun: 9am–12am</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 LaMaison Restaurant. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
 
 </body>
 </html>
