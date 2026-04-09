@@ -44,10 +44,24 @@
             <h2>Send Us a Message</h2>
             <p>Fill in the form below and we'll get back to you within 24 hours</p>
 
+            <!-- SUCCESS MESSAGE -->
             <div class="contact-success" id="contact-success">
                 ✅ Message sent successfully! We'll get back to you within 24 hours.
             </div>
 
+            <!-- ERROR MESSAGE -->
+            <div class="error-msg" id="contact-error" style="
+                background:#FFE8E8;
+                color:#D32F2F;
+                padding:10px 14px;
+                border-radius:8px;
+                font-size:13px;
+                margin-bottom:16px;
+                display:none;
+                border:1px solid #FFCDD2;">
+            </div>
+
+            <!-- NAME ROW -->
             <div class="contact-name-row">
                 <div class="c-fg">
                     <label>First Name</label>
@@ -59,16 +73,19 @@
                 </div>
             </div>
 
+            <!-- EMAIL -->
             <div class="c-fg">
                 <label>Email Address</label>
                 <input type="email" id="c-email" placeholder="Enter your email address" />
             </div>
 
+            <!-- PHONE -->
             <div class="c-fg">
                 <label>Phone Number</label>
                 <input type="tel" id="c-phone" placeholder="Enter your phone number" />
             </div>
 
+            <!-- SUBJECT -->
             <div class="c-fg">
                 <label>Subject</label>
                 <select id="c-subject">
@@ -81,11 +98,13 @@
                 </select>
             </div>
 
+            <!-- MESSAGE -->
             <div class="c-fg">
                 <label>Message</label>
                 <textarea id="c-message" placeholder="Write your message here......"></textarea>
             </div>
 
+            <!-- SEND BUTTON -->
             <button class="contact-send-btn" onclick="sendMessage()">Send Message</button>
         </div>
 
@@ -101,6 +120,7 @@
                     <div class="contact-info-val">42 Gourmet Lane,<br>Downtown District, City</div>
                 </div>
             </div>
+
             <div class="contact-info-item">
                 <div class="contact-info-icon">📞</div>
                 <div>
@@ -108,6 +128,7 @@
                     <div class="contact-info-val">+1 (555) 123-4567</div>
                 </div>
             </div>
+
             <div class="contact-info-item">
                 <div class="contact-info-icon">✉️</div>
                 <div>
@@ -115,6 +136,7 @@
                     <div class="contact-info-val">hello@lamaison.com</div>
                 </div>
             </div>
+
             <div class="contact-info-item">
                 <div class="contact-info-icon">🌐</div>
                 <div>
@@ -194,38 +216,87 @@
         </div>
     </footer>
 
+    <!-- SCRIPTS -->
     <script src="../js/cart.js"></script>
     <script>
-    function sendMessage() {
-        const firstName = document.getElementById('c-firstname').value.trim();
-        const email = document.getElementById('c-email').value.trim();
-        const message = document.getElementById('c-message').value.trim();
 
-        if (!firstName || !email || !message) {
-            alert('Please fill in all required fields!');
-            return;
+        // ===== SEND MESSAGE — Connected to Backend =====
+        async function sendMessage() {
+
+            const firstName = document.getElementById('c-firstname').value.trim();
+            const lastName  = document.getElementById('c-lastname').value.trim();
+            const email     = document.getElementById('c-email').value.trim();
+            const phone     = document.getElementById('c-phone').value.trim();
+            const subject   = document.getElementById('c-subject').value;
+            const message   = document.getElementById('c-message').value.trim();
+
+            const successBox = document.getElementById('contact-success');
+            const errorBox   = document.getElementById('contact-error');
+
+            // Hide both messages first
+            successBox.classList.remove('show');
+            errorBox.style.display = 'none';
+
+            // Check required fields
+            if (!firstName || !email || !message) {
+                errorBox.textContent = '❌ Please fill in First Name, Email and Message!';
+                errorBox.style.display = 'block';
+                return;
+            }
+
+            try {
+                // Send to backend
+                const response = await fetch('http://localhost:3000/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        firstName,
+                        lastName,
+                        email,
+                        phone,
+                        subject,
+                        message
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    // Show success message
+                    successBox.classList.add('show');
+
+                    // Clear the form
+                    document.getElementById('c-firstname').value = '';
+                    document.getElementById('c-lastname').value  = '';
+                    document.getElementById('c-email').value     = '';
+                    document.getElementById('c-phone').value     = '';
+                    document.getElementById('c-subject').value   = '';
+                    document.getElementById('c-message').value   = '';
+
+                } else {
+                    errorBox.textContent = '❌ ' + data.error;
+                    errorBox.style.display = 'block';
+                }
+
+            } catch (error) {
+                // If backend is not running — fall back to local storage
+                console.log('Backend not available, saving to localStorage instead');
+
+                const messages = JSON.parse(localStorage.getItem('lamaison_messages')) || [];
+                messages.push({ firstName, lastName, email, phone, subject, message, date: new Date().toLocaleDateString() });
+                localStorage.setItem('lamaison_messages', JSON.stringify(messages));
+
+                successBox.classList.add('show');
+
+                document.getElementById('c-firstname').value = '';
+                document.getElementById('c-lastname').value  = '';
+                document.getElementById('c-email').value     = '';
+                document.getElementById('c-phone').value     = '';
+                document.getElementById('c-subject').value   = '';
+                document.getElementById('c-message').value   = '';
+            }
         }
 
-        const messages = JSON.parse(localStorage.getItem('lamaison_messages')) || [];
-        messages.push({
-            firstName,
-            lastName: document.getElementById('c-lastname').value.trim(),
-            email,
-            phone: document.getElementById('c-phone').value.trim(),
-            subject: document.getElementById('c-subject').value,
-            message,
-            date: new Date().toLocaleDateString()
-        });
-        localStorage.setItem('lamaison_messages', JSON.stringify(messages));
-
-        document.getElementById('contact-success').classList.add('show');
-        document.getElementById('c-firstname').value = '';
-        document.getElementById('c-lastname').value = '';
-        document.getElementById('c-email').value = '';
-        document.getElementById('c-phone').value = '';
-        document.getElementById('c-subject').value = '';
-        document.getElementById('c-message').value = '';
-    }
     </script>
 
 </body>
